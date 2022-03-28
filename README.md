@@ -1,4 +1,4 @@
-# This project is for testing Jenkins integration with github
+# This project is for testing Jenkins running on kubernetes pods integration with github
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

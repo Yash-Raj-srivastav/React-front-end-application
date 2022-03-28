@@ -4,6 +4,7 @@ pipeline{
     stages{
         stage('install KubeScape'){
             steps{
+                sh 'curl --version'
                 echo "Installing KubeScape for a security check of this cluster"
                 sh"""
                     curl -s https://raw.githubusercontent.com/armosec/kubescape/master/install.sh | /bin/bash
@@ -23,7 +24,6 @@ pipeline{
     post{
         always{
             echo "Cleaning WorkSpace!"
-            cleanWS()
         }
     }
 }

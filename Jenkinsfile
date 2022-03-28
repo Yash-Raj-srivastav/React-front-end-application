@@ -12,10 +12,12 @@ pipeline{
         }
 
         stage('Run kubescape security scan'){
-            echo "Scanning the cluster with KubeScape!"
-            sh """
-                kubescape scan framework yash-jenkins --submit --account=572b863d-03a3-4346-87af-b333c6e4db30
-            """
+            steps{
+                echo "Scanning the cluster with KubeScape!"
+                sh """
+                    kubescape scan framework yash-jenkins --submit --account=572b863d-03a3-4346-87af-b333c6e4db30
+                """
+            }
         }
     }
     post{

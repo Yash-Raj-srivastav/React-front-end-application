@@ -9,7 +9,7 @@ pipeline{
                 script{
                     echo ""
                     sh"""
-                        docker compose up
+                        docker-compose up
                         docker ps
                     """
                 }

@@ -9,7 +9,7 @@ pipeline{
                 script{
                     echo ""
                     sh """
-                        rm -f $WORKSPACE/React-front-end-application
+                        rm -r $WORKSPACE/React-front-end-application
                         git clone https://github.com/Yash-Raj-srivastav/React-front-end-application.git
                     """
                 }

@@ -23,7 +23,7 @@ pipeline{
                     sh """
                         ls
                         chmod +x docker-compose.yaml
-                        docker-compose up
+                        sudo docker-compose up
                     """
                 }
             }

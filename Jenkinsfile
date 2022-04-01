@@ -22,7 +22,6 @@ pipeline{
                     echo "Hello there from GitHub!!"
                     sh """
                         ls
-                        cd /React-front-end-application/
                         chmod +x /docker-compose.yaml
                         docker-compose up
                     """

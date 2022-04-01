@@ -4,12 +4,13 @@ pipeline{
     agent any
 
     stages{
-        stage('install KubeScape'){
+        stage('Run a docker container'){
             steps{
                 script{
-                    echo "Installing KubeScape for a security check of this cluster"
+                    echo ""
                     sh"""
-                        sudo curl -s https://raw.githubusercontent.com/armosec/kubescape/master/install.sh | /bin/bash                
+                        docker compose up
+                        docker ps
                     """
                 }
             }
@@ -18,10 +19,7 @@ pipeline{
         stage('Run kubescape security scan'){
             steps{
                 script{
-                    echo "Scanning the cluster with KubeScape!"
-                    sh """
-                        sudo kubescape scan framework yash-jenkins --submit --account=572b863d-03a3-4346-87af-b333c6e4db30
-                    """
+                    echo "Hello there from GitHub!!"
                 }
             }
         }

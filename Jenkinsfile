@@ -4,22 +4,24 @@ pipeline{
     agent any
 
     stages{
-        stage('Run a docker container'){
+        stage('clone git repo'){
             steps{
                 script{
                     echo ""
-                    sh"""
-                        docker-compose up
-                        docker ps
+                    sh """
+                        git clone git@github.com:Yash-Raj-srivastav/React-front-end-application.git
                     """
                 }
             }
         }
 
-        stage('Run kubescape security scan'){
+        stage('Run docker compose'){
             steps{
                 script{
                     echo "Hello there from GitHub!!"
+                    sh """
+                        docker-compose up
+                    """
                 }
             }
         }

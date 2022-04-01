@@ -22,7 +22,7 @@ pipeline{
                     echo "Hello there from GitHub!!"
                     sh """
                         ls
-                        chmod +x /docker-compose.yaml
+                        chmod +x docker-compose.yaml
                         docker-compose up
                     """
                 }

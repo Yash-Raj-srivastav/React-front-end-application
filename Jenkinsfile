@@ -18,7 +18,7 @@ pipeline{
         stage('Run docker compose'){
             steps{
                 script{
-                    sh """
+                    sh '''
                           #!/bin/bash
                           sudo apt-get update
                           sudo apt-get install \
@@ -34,7 +34,7 @@ pipeline{
                           sudo apt-get update
                           sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
                           sudo docker run hello-world
-                    """
+                    '''
                 }
             }
         }

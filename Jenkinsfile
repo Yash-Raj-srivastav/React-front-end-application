@@ -20,6 +20,7 @@ pipeline{
                 script{
                     sh '''
                           #!/bin/bash
+                          set -x
                           apt-get update
                           apt-get install \
                           ca-certificates \

@@ -15,18 +15,14 @@ pipeline{
             }
         }
 
-//         stage('Run docker compose'){
-//             steps{
-//                 script{
-//                     echo "Hello there from GitHub!!"
-//                     sh """
-//                         ls
-//                         chmod +x docker-compose.yaml
-//                         docker-compose up
-//                     """
-//                 }
-//             }
-//         }
+        stage('Run docker compose'){
+            steps{
+                script{
+                    echo "Hello there from GitHub!!"
+                    sh "ls"
+                }
+            }
+        }
     }
     post{
         always{

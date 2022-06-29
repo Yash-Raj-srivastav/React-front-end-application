@@ -1,8 +1,9 @@
 #!/usr/bin/env groovy
 
 pipeline{
-    agent any
-
+    agent {
+        docker { image 'node:16.13.1-alpine' }
+    }
     stages{
         stage('clone git repo'){
             steps{
@@ -18,14 +19,7 @@ pipeline{
         stage('Run docker compose'){
             steps{
                 script{
-                    sh '''
-                          #!/bin/bash
-                          set -x
-                          mkdir -p /etc/apt/keyrings
-                          curl -fsSL https://download.docker.com/linux/ubuntu/gpg
-                          apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-                          docker run hello-world
-                    '''
+                    sh 'node --version'
                 }
             }
         }

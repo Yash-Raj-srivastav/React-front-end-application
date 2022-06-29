@@ -1,9 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline{
-    agent {
-        kubernetes
-    }
+    agent kubernetes
     stages{
         stage('clone git repo'){
             steps{

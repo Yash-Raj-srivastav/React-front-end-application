@@ -7,26 +7,26 @@ pipeline{
         stage('clone git repo'){
             steps{
                 script{
-                    echo ""
-                    sh """
-                        git clone https://github.com/Yash-Raj-srivastav/React-front-end-application.git
-                    """
+                    def foo = "Hello There!!"
+                    if (foo.contains("Hello")){
+                        println "Hello World!"
+                    }
                 }
             }
         }
 
-        stage('Run docker compose'){
-            steps{
-                script{
-                    echo "Hello there from GitHub!!"
-                    sh """
-                        ls
-                        chmod +x docker-compose.yaml
-                        docker-compose up
-                    """
-                }
-            }
-        }
+//         stage('Run docker compose'){
+//             steps{
+//                 script{
+//                     echo "Hello there from GitHub!!"
+//                     sh """
+//                         ls
+//                         chmod +x docker-compose.yaml
+//                         docker-compose up
+//                     """
+//                 }
+//             }
+//         }
     }
     post{
         always{

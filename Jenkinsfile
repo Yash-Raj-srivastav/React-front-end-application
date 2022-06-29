@@ -2,7 +2,7 @@
 
 pipeline{
     agent {
-        docker { image 'node:16.13.1-alpine' }
+        kubernetes
     }
     stages{
         stage('clone git repo'){
@@ -19,7 +19,7 @@ pipeline{
         stage('Run docker compose'){
             steps{
                 script{
-                    sh 'node --version'
+                    sh 'kubectl version'
                 }
             }
         }

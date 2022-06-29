@@ -19,7 +19,7 @@ pipeline{
             steps{
                 script{
                     echo "Hello there from GitHub!!"
-                    sh "ls"
+                    sh "docker ps"
                 }
             }
         }

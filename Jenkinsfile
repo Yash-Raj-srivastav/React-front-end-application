@@ -6,10 +6,7 @@ pipeline{
         stage('clone git repo'){
             steps{
                 script{
-                    def foo = "Hello There!!"
-                    if (foo.contains("Hello")){
-                        println "Hello World!"
-                    }
+                    sh "docker"
                 }
             }
         }
@@ -24,7 +21,7 @@ pipeline{
     }
     post{
         always{
-            echo "Cleaning WorkSpace!"
+            cleanWs()
         }
     }
 }

@@ -3,7 +3,7 @@
 pipeline{
     agent any
     stages{
-        stage('clone git repo'){
+        stage('Run Docker command'){
             steps{
                 script{
                     sh "docker"

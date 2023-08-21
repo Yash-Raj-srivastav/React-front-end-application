@@ -12,9 +12,7 @@ pipeline{
             steps{
                 script{
                     docker.withRegistry('', DOCKER_HUB_CREDENTIALS){
-                        sh """
-                            /usr/local/bin/docker push react-application-react-app:latest
-                        """   
+                        sh "/usr/local/bin/docker push $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG"   
                     }
                 }
             }

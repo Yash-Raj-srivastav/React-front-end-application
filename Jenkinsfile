@@ -14,7 +14,7 @@ pipeline{
         stage('Run docker compose'){
             steps{
                 script{
-                    sh 'kubectl version'
+                    sh '/usr/local/bin/kubectl --version'
                 }
             }
         }

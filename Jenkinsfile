@@ -2,6 +2,10 @@
 
 pipeline{
     agent any
+    tools {
+        // Define the Docker tool by name and install automatically if not found
+        dockerTool 'docker'
+    }
     stages{
         stage('Run Docker command'){
             steps{

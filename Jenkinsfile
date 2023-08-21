@@ -11,8 +11,8 @@ pipeline{
         stage('Run Docker command'){
             steps{
                 script{
-                    docker.withRegistry('', DOCKER_HUB_CREDENTIALS){
-                        sh "/usr/local/bin/docker push $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG"   
+                    withCredentials(credentialsId: 'docker-hub-creds'){
+                        sh "/usr/local/bin/docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"   
                     }
                 }
             }

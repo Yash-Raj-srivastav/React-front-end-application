@@ -6,7 +6,7 @@ pipeline{
         stage('Run Docker command'){
             steps{
                 script{
-                    sh "/usr/local/bin/docker pull yashsrivastav/zykus-images:my-discord-bot-project.jar"
+                    sh "/usr/local/bin/docker push react-application-react-app:latest"
                 }
             }
         }

@@ -14,7 +14,7 @@ pipeline{
         stage('Run kubectl command'){
             steps{
                 script{
-                    sh '/usr/local/bin/kubectl version'
+                    sh '/usr/local/bin/kubectl version --short'
                 }
             }
         }

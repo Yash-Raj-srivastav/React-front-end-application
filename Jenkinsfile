@@ -6,7 +6,7 @@ pipeline{
         stage('Run Docker command'){
             steps{
                 script{
-                    sh "docker"
+                    sh "/usr/local/bin/docker --version"
                 }
             }
         }

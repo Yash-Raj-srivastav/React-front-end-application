@@ -11,9 +11,9 @@ pipeline{
         stage('Run Docker command'){
             steps{
                 script{
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', passwordVariable: '$USER_NAME', usernameVariable: '$USER_PASS')]){
-                        sh "/usr/local/bin/docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"   
-                    }
+                    //withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', passwordVariable: '$USER_NAME', usernameVariable: '$USER_PASS')]){
+                        sh "docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"   
+                    //}
                 }
             }
         }

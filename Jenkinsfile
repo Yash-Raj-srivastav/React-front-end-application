@@ -14,7 +14,6 @@ pipeline{
                     //withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', passwordVariable: '$USER_NAME', usernameVariable: '$USER_PASS')]){
                         //sh "docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"   
                     //}
-                    sh "docker --version"
                 }
             }
         }

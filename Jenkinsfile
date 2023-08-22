@@ -12,19 +12,20 @@ pipeline{
             steps{
                 script{
                     //withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', passwordVariable: '$USER_NAME', usernameVariable: '$USER_PASS')]){
-                        sh "docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"   
+                        //sh "docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"   
                     //}
+                    sh "docker --version"
                 }
             }
         }
 
-        // stage('Run kubectl command'){
-        //     steps{
-        //         script{
-        //             sh '/usr/local/bin/kubectl version --short'
-        //         }
-        //     }
-        // }
+        stage('Run kubectl command'){
+            steps{
+                script{
+                    sh '/usr/local/bin/kubectl version --short'
+                }
+            }
+        }
     }
     // post{
     //     always{
